@@ -1,20 +1,22 @@
 package entity;
 
-public class Symbol implements Component {
+public class Symbol extends Component {
+    private char symbol;
 
-    public void add() {
-
+    public Symbol(char symbol) {
+        this.symbol = symbol;
     }
 
-    public void remove() {
-
+    public char getSymbol() {
+        return symbol;
     }
 
-    public void getChild() {
-        throw new UnsupportedOperationException("There is no element, less, than symbol.");
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
     }
 
-    public void operation() {
-
+    @Override
+    void print() {
+        super.print();
     }
 }

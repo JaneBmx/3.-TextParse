@@ -1,23 +1,18 @@
 package entity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Word implements Component{
-    private ArrayList<Symbol> symbols;
+public class Word extends Component {
+    ArrayList<Symbol> symbols;
 
-    public void add() {
 
-    }
-
-    public void remove() {
-
-    }
-
-    public void getChild() {
-
-    }
-
-    public void operation() {
-
+    @Override
+    void print() {
+        Iterator<Symbol> iterator = symbols.iterator();
+        while (iterator.hasNext()) {
+            Symbol symbol = iterator.next();
+            symbol.print();
+        }
     }
 }

@@ -1,23 +1,18 @@
 package entity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Paragraph implements Component{
+public class Paragraph extends Component{
     private ArrayList<Sentence> sentences;
 
-    public void add() {
 
-    }
-
-    public void remove() {
-
-    }
-
-    public void getChild() {
-
-    }
-
-    public void operation() {
-
+    @Override
+    void print() {
+        Iterator<Sentence> iterator = sentences.iterator();
+        while (iterator.hasNext()){
+            Sentence sentence = iterator.next();
+            sentence.print();
+        }
     }
 }

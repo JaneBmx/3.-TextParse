@@ -1,23 +1,17 @@
 package entity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Lexeme implements Component{
-    private ArrayList<Symbol> words;
+public class Lexeme extends Component {
+    private ArrayList<Word> words;
 
-    public void add() {
-
-    }
-
-    public void remove() {
-
-    }
-
-    public void getChild() {
-
-    }
-
-    public void operation() {
-
+    @Override
+    void print() {
+        Iterator<Word> iterator = words.iterator();
+        while (iterator.hasNext()) {
+            Word word = iterator.next();
+            word.print();
+        }
     }
 }

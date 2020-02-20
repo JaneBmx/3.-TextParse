@@ -1,11 +1,24 @@
 package entity;
 
-public interface Component {
-    void add();
+public abstract class Component {
+    void add() {
+        throw new UnsupportedOperationException();
+    }
 
-    void remove();
+    void remove() {
+        throw new UnsupportedOperationException();
+    }
 
-    void getChild();
+    void getChild() {
+        throw new UnsupportedOperationException();
+    }
 
-    void operation();
+    void operation() {
+        throw new UnsupportedOperationException();
+    }
+
+    void print(){
+
+    }
+
 }
