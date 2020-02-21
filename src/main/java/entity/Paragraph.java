@@ -3,7 +3,7 @@ package entity;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Paragraph extends Component{
+public class Paragraph extends TextComponent {
     private ArrayList<Sentence> sentences;
 
 

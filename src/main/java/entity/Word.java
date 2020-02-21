@@ -3,7 +3,7 @@ package entity;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Word extends Component {
+public class Word extends TextComponent {
     ArrayList<Symbol> symbols;
 
 

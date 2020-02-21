@@ -1,12 +1,12 @@
 package iterator;
 
-import entity.Component;
+import entity.TextComponent;
 
 import java.util.Iterator;
 import java.util.Stack;
 
 public class CompositeIterator implements Iterator {
-    Stack<Iterator<Component>> stack = new Stack<>();
+    Stack<Iterator<TextComponent>> stack = new Stack<>();
 
     public CompositeIterator(Iterator iterator) {
         stack.push(iterator);
@@ -14,12 +14,12 @@ public class CompositeIterator implements Iterator {
 
     public Object next() {
         if (hasNext()) {
-            Iterator<Component> iterator = stack.peek();
-            Component component = iterator.next();
+            Iterator<TextComponent> iterator = stack.peek();
+            TextComponent textComponent = iterator.next();
 
-            stack.push(component.createIterator());
+            stack.push(textComponent.createIterator());
             //TODO определи в узлах. в листьях NullIterator
-            return component;
+            return textComponent;
         } else {
             return null;
         }
@@ -28,7 +28,7 @@ public class CompositeIterator implements Iterator {
     @Override
     public boolean hasNext() {
         if (!stack.empty()) {
-            Iterator<Component> iterator = stack.peek();
+            Iterator<TextComponent> iterator = stack.peek();
             if (!iterator.hasNext()) {
                 stack.pop();
                 return hasNext();

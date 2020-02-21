@@ -1,6 +1,10 @@
 package entity;
 
-public class Symbol extends Component {
+import iterator.NullIterator;
+
+import java.util.Iterator;
+
+public class Symbol extends TextComponent {
     private char symbol;
 
     public Symbol(char symbol) {
@@ -13,6 +17,10 @@ public class Symbol extends Component {
 
     public void setSymbol(char symbol) {
         this.symbol = symbol;
+    }
+
+    public Iterator<TextComponent> createIterator(){
+        return new NullIterator();
     }
 
     @Override

@@ -3,7 +3,7 @@ package entity;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Lexeme extends Component {
+public class Lexeme extends TextComponent {
     private ArrayList<Word> words;
 
     @Override
