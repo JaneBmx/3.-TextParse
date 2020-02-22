@@ -2,3 +2,4 @@
 TextParse.iml
 /target
 /.idea/
+/src/main/java/parser/redundant/
