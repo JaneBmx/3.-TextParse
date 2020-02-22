@@ -19,10 +19,6 @@ public interface Component {
         throw new UnsupportedOperationException();
     }
 
-    //default String toString() {
-     //   throw new UnsupportedOperationException();
-    //}
-
     default int getCountComponents() {
         throw new UnsupportedOperationException();
     }
