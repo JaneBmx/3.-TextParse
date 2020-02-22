@@ -5,50 +5,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private final static Calculator INSTANCE = new Calculator();
-
     private Calculator() {
     }
 
+    private static class Holder {
+        private static final Calculator INSTANCE = new Calculator();
+    }
+
     public static Calculator getInstance() {
-        return INSTANCE;
+        return Holder.INSTANCE;
     }
 
     public Integer calculate(List<String> expression) {
-        List<String> polishExpression = ReversePolishNotation.toPolishRecord(expression);
-        List<Operators> listMathExpressions = toMathExpressionList(polishExpression);
-        ArrayDeque<Integer> context = new ArrayDeque();
-        for (Operators mathPartExpression : listMathExpressions) {
-            mathPartExpression.calculate(context);
-            //TODO fix
+        List<String> reversePolishNotation = ReversePolishNotation.toReversePolishNotation(expression);
+        List<Operator> expressions = toMathExpressionList(reversePolishNotation);
+        ArrayDeque<Integer> content = new ArrayDeque<>();
+
+        for (Operator op : expressions) {
+            op.calculate(content);
         }
-        return context.pop();
+        return content.pop();
     }
 
-    private List<Operators> toMathExpressionList(List<String> polishExpression) {
-        List<Operators> listExpression = new ArrayList<>();
+    private List<Operator> toMathExpressionList(List<String> polishExpression) {
+        List<Operator> listExpression = new ArrayList<>();
         for (String partOfPolishExpression : polishExpression) {
             switch (partOfPolishExpression) {
                 case "|":
-                    listExpression.add(Operators.OR);
+                    listExpression.add(Operator.OR);
                     break;
                 case "&":
-                    listExpression.add(Operators.AND);
+                    listExpression.add(Operator.AND);
                     break;
                 case "^":
-                    listExpression.add(Operators.CAP);
+                    listExpression.add(Operator.CAP);
                     break;
                 case "<<":
-                    listExpression.add(Operators.LEFT_SHIFT);
+                    listExpression.add(Operator.LEFT_SHIFT);
                     break;
                 case ">>":
-                    listExpression.add(Operators.RIGHT_SHIFT);
+                    listExpression.add(Operator.RIGHT_SHIFT);
                     break;
                 default:
                     int value = Integer.parseInt(partOfPolishExpression);
-                    listExpression.add(Operators.NUMBER);
+                    listExpression.add(Operator.NUMBER);
                     break;
-                //TODO check default condition
+                //TODO how to add vlue in NUMBER?
             }
         }
         return listExpression;

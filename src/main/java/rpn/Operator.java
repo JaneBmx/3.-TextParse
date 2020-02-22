@@ -1,27 +1,39 @@
 package rpn;
 
-public enum Operator {
-    OPEN_BRACKET("(", 1),
-    CLOSE_BRAKCET(")", 1),
-    DOUBLE_LEFT_SHIFT("<<", 2),
-    DOUBLE_RIGHT_SHIFT(">>", 2),
-    AND("&", 3),
-    CAP("^", 4),
-    OR("|", 5);
+import java.util.ArrayDeque;
 
-    private String value;
-    private int priority;
+enum Operator {
+    AND {
+        public void calculate(ArrayDeque content) {
+            content.push((Integer) content.pop() & (Integer) content.pop());
+        }
+    },
+    CAP {
+        public void calculate(ArrayDeque content) {
+            content.push((Integer) content.pop() ^ (Integer) content.pop());
+        }
+    },
+    OR {
+        public void calculate(ArrayDeque content) {
+            content.push((Integer) content.pop() | (Integer) content.pop());
+        }
+    },
+    LEFT_SHIFT {
+        public void calculate(ArrayDeque content) {
+            content.push((Integer) content.pop() << (Integer) content.pop());
+        }
+    },
+    RIGHT_SHIFT {
+        public void calculate(ArrayDeque content) {
+            content.push((Integer) content.pop() >> (Integer) content.pop());
+        }
+    },
+    NUMBER {
+        private int number;
 
-    Operator(String value, int priority) {
-        this.value = value;
-        this.priority = priority;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public int getPriority() {
-        return priority;
-    }
+        public void calculate(ArrayDeque content) {
+            content.push(number);
+        }
+    };
+    public abstract void calculate(ArrayDeque content);
 }
