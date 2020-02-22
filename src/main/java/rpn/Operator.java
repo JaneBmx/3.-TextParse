@@ -31,11 +31,10 @@ enum Operator {
     NUMBER {
         private int number;
 
-
-
         public void calculate(ArrayDeque content) {
             content.push(number);
         }
     };
+
     public abstract void calculate(ArrayDeque content);
 }

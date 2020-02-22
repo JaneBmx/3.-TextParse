@@ -50,7 +50,7 @@ public class Calculator {
                     int value = Integer.parseInt(partOfPolishExpression);
                     listExpression.add(Operator.NUMBER);
                     break;
-                //TODO how to add vlue in NUMBER?
+                //TODO how to add value in NUMBER?
             }
         }
         return listExpression;
