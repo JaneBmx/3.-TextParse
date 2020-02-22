@@ -1,12 +1,11 @@
 package validator;
 
 import entity.ComponentType;
-import entity.TextComponent;
+import entity.Component;
 
 public class TextComponentValidator {
 
-    public static boolean isText(TextComponent textComponent){
-        return textComponent !=null && textComponent.getComponentType() == ComponentType.TEXT;
+    public static boolean isText(Component component){
+        return component !=null && component.getComponentType() == ComponentType.TEXT;
     }
-
 }
