@@ -21,7 +21,7 @@ public class ExpressionParser implements Parser {
         return parser.parse(String.valueOf(result));
     }
 
-    private List<String> splitExpression(String expression) {
+    public List<String> splitExpression(String expression) {
         List<String> array = Arrays.asList(expression.split(EXPRESSION_SPLIT_REGEX));
         return new ArrayList<>(array);
     }
