@@ -9,7 +9,7 @@ import java.util.Comparator;
 
 import static validator.TextComponentValidator.*;
 
-public class TextSorter {
+public class TextSort {
     public void sortParagraphsByCountOfSentences(Composite textComposite) throws SortException {
         if (isText(textComposite)) {
             Collections.sort(textComposite.getComponents(), (o1, o2) -> {
