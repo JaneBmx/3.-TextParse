@@ -10,8 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,6 +53,7 @@
       <workItem from="1582006421932" duration="1064000" />
       <workItem from="1582194564025" duration="1652000" />
       <workItem from="1582196635086" duration="4738000" />
+      <workItem from="1582237064731" duration="16664000" />
     </task>
     <servers />
   </component>
@@ -63,18 +65,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1582194655994" />
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1582199658442">
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1582399054548">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582199658442" />
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582399054548" />
     <state x="313" y="54" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582199058223">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="313" y="54" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1582199058223" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582196636129">
+    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582297323719">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582196636128" />
+    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582297323719" />
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582375042632">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582375042632" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582237750998">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582237750998" />
     <state x="65" y="60" key="new project wizard" timestamp="1582199025778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

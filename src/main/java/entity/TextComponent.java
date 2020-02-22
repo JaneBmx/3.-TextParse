@@ -22,4 +22,12 @@ public abstract class TextComponent {
     public String toString() {
         throw new UnsupportedOperationException();
     }
+
+    public int getCountComponents() {
+        throw new UnsupportedOperationException();
+    }
+
+    public ComponentType getComponentType(){
+        throw new UnsupportedOperationException();
+    }
 }

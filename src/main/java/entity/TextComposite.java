@@ -14,16 +14,17 @@ public class TextComposite extends TextComponent {
         this.componentType = componentType;
     }
 
-    public ComponentType getComponentType() {
-        return componentType;
-    }
-
     public ArrayList<TextComponent> getComponents() {
         return components;
     }
 
     public void setComponents(ArrayList<TextComponent> components) {
         this.components = components;
+    }
+
+    @Override
+    public ComponentType getComponentType() {
+        return componentType;
     }
 
     @Override
@@ -47,6 +48,11 @@ public class TextComposite extends TextComponent {
             iterator = new CompositeIterator(components.iterator());
         }
         return iterator;
+    }
+
+    @Override
+    public int getCountComponents() {
+        return components.size();
     }
 
     @Override

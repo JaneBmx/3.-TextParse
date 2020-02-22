@@ -20,7 +20,7 @@ public class Symbol extends TextComponent {
         this.symbol = symbol;
     }
 
-    public static ComponentType getComponentType() {
+    public ComponentType getComponentType() {
         return componentType;
     }
 
