@@ -1,7 +1,7 @@
 package service;
 
-import entity.TextComponent;
-import entity.TextComposite;
+import entity.Component;
+import entity.Composite;
 import exception.SortException;
 
 import java.util.Collections;
@@ -10,10 +10,10 @@ import java.util.Comparator;
 import static validator.TextComponentValidator.*;
 
 public class TextSorter {
-    public void sortParagraphsByCountOfSentences(TextComposite textComposite) throws SortException {
+    public void sortParagraphsByCountOfSentences(Composite textComposite) throws SortException {
         if (isText(textComposite)) {
             Collections.sort(textComposite.getComponents(), (o1, o2) -> {
-                Comparator<TextComponent> comparator = Comparator.comparing(TextComponent::getCountComponents);
+                Comparator<Component> comparator = Comparator.comparing(Component::getCountComponents);
                 return comparator.compare(o1, o2);
             });
         }
