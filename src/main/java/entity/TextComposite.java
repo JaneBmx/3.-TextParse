@@ -6,8 +6,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class TextComposite extends TextComponent {
-    Iterator<TextComponent> iterator = null;
-    ArrayList<TextComponent> components = new ArrayList<>();
+    private Iterator<TextComponent> iterator = null;
+    private ArrayList<TextComponent> components = new ArrayList<>();
+    private ComponentType componentType;
+
+    public TextComposite(ComponentType componentType) {
+        this.componentType = componentType;
+    }
+
+    public ComponentType getComponentType() {
+        return componentType;
+    }
+
+    public ArrayList<TextComponent> getComponents() {
+        return components;
+    }
+
+    public void setComponents(ArrayList<TextComponent> components) {
+        this.components = components;
+    }
 
     @Override
     public void add(TextComponent textComponent) {
