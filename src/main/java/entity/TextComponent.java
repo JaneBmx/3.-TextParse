@@ -3,28 +3,23 @@ package entity;
 import java.util.Iterator;
 
 public abstract class TextComponent {
-    public void add() {
+    public void add(TextComponent textComponent) {
         throw new UnsupportedOperationException();
     }
 
-    public void remove() {
+    public void remove(TextComponent textComponent) {
         throw new UnsupportedOperationException();
     }
 
-    public void getChild() {
+    public TextComponent getChild(int index) {
         throw new UnsupportedOperationException();
     }
 
-    public void operation() {
+    public Iterator<TextComponent> getIterator() {
         throw new UnsupportedOperationException();
     }
 
-    public Iterator<TextComponent> createIterator() {
+    public String toString() {
         throw new UnsupportedOperationException();
     }
-
-    void print() {
-
-    }
-
 }

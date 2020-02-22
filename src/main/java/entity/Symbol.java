@@ -11,6 +11,7 @@ public class Symbol extends TextComponent {
         this.symbol = symbol;
     }
 
+
     public char getSymbol() {
         return symbol;
     }
@@ -19,12 +20,13 @@ public class Symbol extends TextComponent {
         this.symbol = symbol;
     }
 
-    public Iterator<TextComponent> createIterator(){
+    @Override
+    public Iterator<TextComponent> getIterator() {
         return new NullIterator();
     }
 
     @Override
-    void print() {
-        super.print();
+    public String toString() {
+        return String.valueOf(symbol);
     }
 }

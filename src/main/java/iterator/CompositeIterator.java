@@ -17,7 +17,7 @@ public class CompositeIterator implements Iterator {
             Iterator<TextComponent> iterator = stack.peek();
             TextComponent textComponent = iterator.next();
 
-            stack.push(textComponent.createIterator());
+            stack.push(textComponent.getIterator());
             //TODO определи в узлах. в листьях NullIterator
             return textComponent;
         } else {
