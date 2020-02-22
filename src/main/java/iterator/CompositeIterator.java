@@ -1,23 +1,23 @@
 package iterator;
 
-import entity.TextComponent;
+import entity.Component;
 
 import java.util.Iterator;
 import java.util.Stack;
 
 public class CompositeIterator implements Iterator {
-    private Stack<Iterator<TextComponent>> stack = new Stack<>();
+    private Stack<Iterator<Component>> stack = new Stack<>();
 
-    public CompositeIterator(Iterator<TextComponent> iterator) {
+    public CompositeIterator(Iterator<Component> iterator) {
         stack.push(iterator);
     }
 
     public Object next() {
         if (hasNext()) {
-            Iterator<TextComponent> iterator = stack.peek();
-            TextComponent textComponent = iterator.next();
-            stack.push(textComponent.getIterator());
-            return textComponent;
+            Iterator<Component> iterator = stack.peek();
+            Component component = iterator.next();
+            stack.push(component.getIterator());
+            return component;
         }
         return null;
     }
@@ -25,7 +25,7 @@ public class CompositeIterator implements Iterator {
     @Override
     public boolean hasNext() {
         if (!stack.empty()) {
-            Iterator<TextComponent> iterator = stack.peek();
+            Iterator<Component> iterator = stack.peek();
             if (!iterator.hasNext()) {
                 stack.pop();
                 return hasNext();
