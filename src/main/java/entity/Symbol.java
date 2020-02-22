@@ -4,7 +4,7 @@ import iterator.NullIterator;
 
 import java.util.Iterator;
 
-public class Symbol extends TextComponent {
+public class Symbol implements Component {
     private char symbol;
     private static final ComponentType componentType = ComponentType.SYMBOL;
 
@@ -25,7 +25,7 @@ public class Symbol extends TextComponent {
     }
 
     @Override
-    public Iterator<TextComponent> getIterator() {
+    public Iterator<Component> getIterator() {
         return new NullIterator();
     }
 

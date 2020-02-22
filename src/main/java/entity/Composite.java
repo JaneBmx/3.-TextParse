@@ -5,20 +5,20 @@ import iterator.CompositeIterator;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class TextComposite extends TextComponent {
-    private Iterator<TextComponent> iterator = null;
-    private ArrayList<TextComponent> components = new ArrayList<>();
+public class Composite implements Component {
+    private Iterator<Component> iterator = null;
+    private ArrayList<Component> components = new ArrayList<>();
     private ComponentType componentType;
 
-    public TextComposite(ComponentType componentType) {
+    public Composite(ComponentType componentType) {
         this.componentType = componentType;
     }
 
-    public ArrayList<TextComponent> getComponents() {
+    public ArrayList<Component> getComponents() {
         return components;
     }
 
-    public void setComponents(ArrayList<TextComponent> components) {
+    public void setComponents(ArrayList<Component> components) {
         this.components = components;
     }
 
@@ -28,22 +28,22 @@ public class TextComposite extends TextComponent {
     }
 
     @Override
-    public void add(TextComponent textComponent) {
-        components.add(textComponent);
+    public void add(Component component) {
+        components.add(component);
     }
 
     @Override
-    public void remove(TextComponent textComponent) {
-        components.remove(textComponent);
+    public void remove(Component component) {
+        components.remove(component);
     }
 
     @Override
-    public TextComponent getChild(int index) {
+    public Component getChild(int index) {
         return components.get(index);
     }
 
     @Override
-    public Iterator<TextComponent> getIterator() {
+    public Iterator<Component> getIterator() {
         if (iterator == null) {
             iterator = new CompositeIterator(components.iterator());
         }
@@ -59,10 +59,10 @@ public class TextComposite extends TextComponent {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        Iterator<TextComponent> iterator = components.iterator();
+        Iterator<Component> iterator = components.iterator();
         while (iterator.hasNext()) {
-            TextComponent textComponent = iterator.next();
-            sb.append(textComponent.toString());
+            Component component = iterator.next();
+            sb.append(component.toString());
         }
         return sb.toString();
     }
