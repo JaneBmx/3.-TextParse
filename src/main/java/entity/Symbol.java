@@ -20,6 +20,10 @@ public class Symbol extends TextComponent {
         this.symbol = symbol;
     }
 
+    public static ComponentType getComponentType() {
+        return componentType;
+    }
+
     @Override
     public Iterator<TextComponent> getIterator() {
         return new NullIterator();

@@ -1,7 +1,7 @@
 package service;
 
 public class TextSorter {
-    private void sortParagraphsByCountOfSentences() {
+    public void sortParagraphsByCountOfSentences() {
         Arrays.sort(paragraphs, comparingInt(o -> o.split(SENTENCE_SPLIT_REGEX).length));
     }
 
