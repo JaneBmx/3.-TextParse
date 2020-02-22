@@ -6,9 +6,9 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public class CompositeIterator implements Iterator {
-    Stack<Iterator<TextComponent>> stack = new Stack<>();
+    private Stack<Iterator<TextComponent>> stack = new Stack<>();
 
-    public CompositeIterator(Iterator iterator) {
+    public CompositeIterator(Iterator<TextComponent> iterator) {
         stack.push(iterator);
     }
 
@@ -16,13 +16,10 @@ public class CompositeIterator implements Iterator {
         if (hasNext()) {
             Iterator<TextComponent> iterator = stack.peek();
             TextComponent textComponent = iterator.next();
-
             stack.push(textComponent.getIterator());
-            //TODO определи в узлах. в листьях NullIterator
             return textComponent;
-        } else {
-            return null;
         }
+        return null;
     }
 
     @Override
