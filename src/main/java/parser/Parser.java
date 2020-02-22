@@ -1,7 +1,7 @@
 package parser;
 
-import entity.Composite;
+import entity.Component;
 
 public interface Parser {
-    Composite parse(String text);
+    Component parse(String text);
 }

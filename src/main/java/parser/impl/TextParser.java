@@ -1,8 +1,9 @@
-package parser;
+package parser.impl;
 
 import entity.Component;
 import entity.ComponentType;
 import entity.Composite;
+import parser.Parser;
 
 import static parser.Regex.*;
 

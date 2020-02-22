@@ -1,8 +1,9 @@
-package parser;
+package parser.impl;
 
 import entity.ComponentType;
 import entity.Component;
 import entity.Composite;
+import parser.Parser;
 
 public class WordParser implements Parser {
     private SymbolParser parser;
