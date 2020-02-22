@@ -19,12 +19,12 @@ public class Calculator {
     public Integer calculate(List<String> expression) {
         List<String> reversePolishNotation = ReversePolishNotation.toReversePolishNotation(expression);
         List<Operator> expressions = toMathExpressionList(reversePolishNotation);
-        ArrayDeque<Integer> content = new ArrayDeque<>();
+        ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
 
         for (Operator op : expressions) {
-            op.calculate(content);
+            op.calculate(arrayDeque);
         }
-        return content.pop();
+        return arrayDeque.pop();
     }
 
     private List<Operator> toMathExpressionList(List<String> polishExpression) {
