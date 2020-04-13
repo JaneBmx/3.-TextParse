@@ -18,6 +18,5 @@ public class TextSort {
             });
         }
         throw new SortException("Invalid type of data.");
-        //TODO log
     }
 }
