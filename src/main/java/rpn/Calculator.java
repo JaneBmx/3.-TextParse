@@ -49,8 +49,7 @@ public class Calculator {
                 default:
                     int value = Integer.parseInt(partOfPolishExpression);
                     listExpression.add(Operator.NUMBER);
-                    break;
-                //TODO how to add value in NUMBER?
+                    break;           
             }
         }
         return listExpression;
